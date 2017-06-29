@@ -1,6 +1,6 @@
 FROM docker:git
 
-RUN apk update -q && apk add -q --no-progress py-pip bash 
+RUN apk update -q && apk add -q --no-progress py-pip bash curl
 RUN pip install -q docker-compose
 ADD https://github.com/git-lfs/git-lfs/releases/download/v2.2.0/git-lfs-linux-amd64-2.2.0.tar.gz /tmp/
 RUN cd /tmp/ && tar xzf git-lfs-linux-amd64-2.2.0.tar.gz && cd git-lfs-2.2.0 && ./install.sh && cd .. && rm -rf git-*
